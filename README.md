@@ -9,8 +9,21 @@ Welcome to the TechShop Website! This is an online platform designed to showcase
 - **Secure Checkout**: Easy payment integration for a secure checkout process.
 - **Responsive Design**: Optimized for all device sizes, ensuring a smooth experience on mobile and desktop.
 
-## Project Screenshot
+## Project Screenshots
+Home Page
 ![Project Screenshot](https://github.com/siam-gits/TechShop_Final/blob/main/Project%20Screenshot/home.png)
+
+Sign Up page
+![Project Screenshot](https://github.com/siam-gits/TechShop_Final/blob/main/Project%20Screenshot/signup.png)
+
+Login page
+![Project Screenshot](https://github.com/siam-gits/TechShop_Final/blob/main/Project%20Screenshot/login.png)
+
+Product page
+![Project Screenshot](https://github.com/siam-gits/TechShop_Final/blob/main/Project%20Screenshot/product.png)
+
+Profile page
+![Project Screenshot](https://github.com/siam-gits/TechShop_Final/blob/main/Project%20Screenshot/profile.png)
 
 ## Technologies Used
 - **Frontend**: HTML, CSS, JavaScript (for interactivity)
