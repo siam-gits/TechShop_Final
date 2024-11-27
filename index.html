@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Optionally, add Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <img src="Images/logo.png" alt="Logo" />
+      </div>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="search product here..."
+        />
+        <button id="searchButton" type="button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <div class="login-cart">
+        <div class="cart">
+          <button id="cartButton"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+        <!-- Update this login button to be a link -->
+        <div class="login">
+          <a href="http://localhost:3000/login">
+            <button id="loginButton">Login</button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Section -->
+    <div class="categories">
+      <div class="category" data-info="Details about Mouse">
+        <img src="Images/mouse.png" alt="Mouse" />
+        <span>Mouse</span>
+      </div>
+      <div class="category" data-info="Details about Camera">
+        <img src="Images/camera.png" alt="Camera" />
+        <span>Camera</span>
+      </div>
+      <div class="category" data-info="Details about Mobiles">
+        <img src="Images/mobile.png" alt="Mobiles" />
+        <span>Mobiles</span>
+      </div>
+      <div class="category" data-info="Details about Speakers">
+        <img src="Images/speaker.png" alt="Speakers" />
+        <span>Speakers</span>
+      </div>
+      <div class="category" data-info="Details about Televisions">
+        <img src="Images/tv.png" alt="Televisions" />
+        <span>Televisions</span>
+      </div>
+    </div>
+
+    <!-- Banner Section with Slider -->
+    <div class="banner">
+      <div class="slider">
+        <div class="slide">
+          <img src="Images/banner1.jpg" alt="Banner Image 1" />
+        </div>
+        <div class="slide">
+          <img src="Images/banner2.jpg" alt="Banner Image 2" />
+        </div>
+        <div class="slide">
+          <img src="Images/banner3.jpg" alt="Banner Image 3" />
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+
+    <!-- Collection Section -->
+    <section class="collection">
+      <h2>Featured Collection</h2>
+      <div class="collection-items">
+        <div class="collection-item">
+          <img src="Images/keyboard.png" alt="Keyboard" />
+          <span class="item-name">Keyboard</span>
+          <span class="item-price">$49.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/mobile.png" alt="Mobile Phone" />
+          <span class="item-name">Mobile Phone</span>
+          <span class="item-price">$299.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/mouse.png" alt="Mouse" />
+          <span class="item-name">Mouse</span>
+          <span class="item-price">$19.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/camera.png" alt="Camera" />
+          <span class="item-name">Camera</span>
+          <span class="item-price">$799.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/speaker.png" alt="Speaker" />
+          <span class="item-name">Speaker</span>
+          <span class="item-price">$89.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/tv.png" alt="Television" />
+          <span class="item-name">Television</span>
+          <span class="item-price">$499.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/keyboard.png" alt="Mechanical Keyboard" />
+          <span class="item-name">Mechanical Keyboard</span>
+          <span class="item-price">$129.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/mobile.png" alt="Smartphone" />
+          <span class="item-name">Smartphone</span>
+          <span class="item-price">$399.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/camera.png" alt="Digital Camera" />
+          <span class="item-name">Digital Camera</span>
+          <span class="item-price">$899.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/speaker.png" alt="Bluetooth Speaker" />
+          <span class="item-name">Bluetooth Speaker</span>
+          <span class="item-price">$69.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/tv.png" alt="Television" />
+          <span class="item-name">Television</span>
+          <span class="item-price">$499.99</span>
+        </div>
+        <div class="collection-item">
+          <img src="Images/keyboard.png" alt="Mechanical Keyboard" />
+          <span class="item-name">Mechanical Keyboard</span>
+          <span class="item-price">$129.99</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Tech Shop. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

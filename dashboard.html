@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="profile-page">
+    <div class="profile-container">
+      <h1>Welcome, <span id="user-name">Loading...</span>!</h1>
+      <p>You are logged in successfully. Below is your profile information.</p>
+
+      <!-- Profile Section -->
+      <section class="profile-info">
+        <h2>Your Profile</h2>
+        <div class="profile-details">
+          <div class="profile-details-text">
+            <p>
+              <strong>Name:</strong>
+              <span id="user-name-display">Loading...</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Explore Shop Button Section -->
+      <section class="explore-shop">
+        <h2>Explore Our Shop</h2>
+        <button
+          id="explore-shop-btn"
+          onclick="window.location.href='/index.html';"
+        >
+          Explore Shop
+        </button>
+      </section>
+
+      <!-- Update Profile Section -->
+      <section class="update-profile">
+        <h2>Update Profile</h2>
+        <form id="update-profile-form" onsubmit="updateProfile(event)">
+          <label for="new-name">New Name:</label>
+          <input type="text" id="new-name" placeholder="Enter your new name" />
+
+          <label for="new-password">New Password:</label>
+          <input
+            type="password"
+            id="new-password"
+            placeholder="Enter a new password"
+          />
+
+          <button type="submit">Update Profile</button>
+        </form>
+      </section>
+
+      <!-- Delete Profile Section -->
+      <section class="delete-profile">
+        <h2>Delete Profile</h2>
+        <p>
+          Once deleted, your account and all associated data will be permanently
+          removed.
+        </p>
+        <button id="delete-profile-btn" onclick="deleteProfile()">
+          Delete Profile
+        </button>
+      </section>
+
+      <!-- Logout Button at the Bottom -->
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+
+    <script>
+      // Fetch user data from the backend
+      async function fetchUserData() {
+        const response = await fetch("/api/profile");
+
+        if (response.ok) {
+          const data = await response.json();
+          // Update the frontend with the user's name
+          document.getElementById("user-name").textContent = data.name;
+          document.getElementById("user-name-display").textContent = data.name;
+        } else {
+          alert("Failed to load user data.");
+        }
+      }
+
+      // Call the function to fetch user data on page load
+      fetchUserData();
+
+      // Update Profile function (to be connected with your backend)
+      async function updateProfile(event) {
+        event.preventDefault();
+        const newName = document.getElementById("new-name").value;
+        const newPassword = document.getElementById("new-password").value;
+
+        const response = await fetch("/api/update-profile", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: newName, password: newPassword }),
+        });
+
+        if (response.ok) {
+          alert("Profile updated successfully!");
+          // Optionally, reload the page to reflect the changes
+          fetchUserData();
+        } else {
+          alert("Failed to update profile.");
+        }
+      }
+
+      // Delete Profile function (to be connected with your backend)
+      async function deleteProfile() {
+        if (
+          confirm(
+            "Are you sure you want to delete your profile? This action cannot be undone."
+          )
+        ) {
+          const response = await fetch("/api/delete-profile", {
+            method: "DELETE",
+          });
+
+          if (response.ok) {
+            alert("Profile deleted successfully. You will be logged out.");
+            window.location.href = "/logout"; // Redirect to logout page
+          } else {
+            alert("Failed to delete profile.");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
